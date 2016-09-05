@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'services/index'
+    get '/services', to: 'services#index'
 
     get '/administration', to: 'administration#index'
 
