@@ -1,0 +1,14 @@
+<div id='content'>
+    <div id='description'>
+        <%= form_tag 'delete_users' do %>
+              <select style='width: 100%' name='users[]' id='users' helptext='Select user(s) to delete.'
+                      multiple='multiple' doublepane='true'
+                      tt_onload='hideKeyBoard(); resizeInputFrame();'>
+                    <% @users.each do |user| %>
+                        <option><%= user.username %></option>
+                    <% end %>
+            </select>
+        <% end %>
+    </div>
+</div>
+

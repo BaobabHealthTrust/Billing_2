@@ -1,0 +1,118 @@
+<dataSource name="MySQL - Billing_2_development@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="Billing_2_development">
+      <visible>1</visible>
+    </schema>
+    <schema id="2" name="adsmalawi_laravel" />
+    <schema id="3" name="adsmalawi_on_rails_development" />
+    <schema id="4" name="adsmalawi_rails_development" />
+    <schema id="5" name="adsmalawi_rails_test" />
+    <schema id="6" name="adsmalawi_RoR_development" />
+    <schema id="7" name="adsmalawi_RoR_test" />
+    <schema id="8" name="bart2_db" />
+    <schema id="9" name="bart2_development" />
+    <schema id="10" name="Billing_2_test" />
+    <schema id="11" name="Billing_development" />
+    <schema id="12" name="Billing_test" />
+    <schema id="13" name="Hotline_1_7_development" />
+    <schema id="14" name="htc1_7" />
+    <schema id="15" name="htc_development" />
+    <schema id="16" name="htc_inventory" />
+    <schema id="17" name="information_schema" />
+    <schema id="18" name="jacobmziya_development" />
+    <schema id="19" name="jacobmziya_test" />
+    <schema id="20" name="lakevalleyfc_development" />
+    <schema id="21" name="lakevalleyfc_test" />
+    <schema id="22" name="media24" />
+    <schema id="23" name="mnch_hotline" />
+    <schema id="24" name="mysql" />
+    <schema id="25" name="performance_schema" />
+    <schema id="26" name="publify_dev" />
+    <schema id="27" name="publify_tests" />
+    <schema id="28" name="qbros_development" />
+    <schema id="29" name="qbros_test" />
+    <schema id="30" name="sys" />
+    <schema id="31" name="test" />
+    <schema id="32" name="username" />
+    <table id="33" parent="1" name="ar_internal_metadata" />
+    <table id="34" parent="1" name="schema_migrations" />
+    <table id="35" parent="1" name="user_roles" />
+    <table id="36" parent="1" name="users" />
+    <column id="37" parent="33" name="key">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="38" parent="33" name="value">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="39" parent="33" name="created_at">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="40" parent="33" name="updated_at">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <key id="41" parent="33" name="PRIMARY">
+      <columns>key</columns>
+      <primary>1</primary>
+    </key>
+    <column id="42" parent="34" name="version">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <key id="43" parent="34" name="PRIMARY">
+      <columns>version</columns>
+      <primary>1</primary>
+    </key>
+    <column id="44" parent="35" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="45" parent="35" name="role">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="46" parent="35" name="user_id">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="47" parent="35" name="created_at">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="48" parent="35" name="updated_at">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <key id="49" parent="35" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="50" parent="36" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="51" parent="36" name="username">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="52" parent="36" name="user_role_id">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="53" parent="36" name="pasword_digest">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="54" parent="36" name="created_at">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="55" parent="36" name="updated_at">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <key id="56" parent="36" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+  </database-model>
+</dataSource>
