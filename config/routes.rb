@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+    get '/reports', to: 'reports#index'
+
     get '/services', to: 'services#index'
 
     get '/administration', to: 'administration#index'
