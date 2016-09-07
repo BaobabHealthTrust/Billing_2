@@ -12,21 +12,22 @@
     <!-- Fixed navbar -->
     <div class="pos-f-t">
       <div class="collapse" id="navbar-header">
-        <div class="container bg-inverse p-a-1">
+        <div class="container-fluid bg-inverse p-a-1">
           <h3>Collapsed content</h3>
           <p>Toggleable via the navbar brand.</p>
         </div>
       </div>
-      <nav class="navbar navbar-dark navbar-static-top bg-primary">
-        <div class="container">
-          <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
+      <nav class="navbar navbar-dark navbar-fixed-top bg-inverse">
+        <div class="container-fluid">
+          <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse"
+                  data-target="#exCollapsingNavbar2">
             &#9776;
           </button>
           <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
             <a class="navbar-brand" href="#">Billing</a>
             <ul class="nav navbar-nav">
               <li class="nav-item active">
-                <a class="nav-link" href="/">Dashboard <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/">HOME <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle"
@@ -35,9 +36,8 @@
                   Services
                 </a>
                 <div class="dropdown-menu">
-                  <a class="dropdown-item" href="#">Lab</a>
-                  <a class="dropdown-item" href="#">Radiology</a>
-                  <a class="dropdown-item" href="#">Consultation</a>
+                  <a class="dropdown-item" href='/accounts'>View Accounts</a>
+                  <a class="dropdown-item" href="#">Amount Due</a>
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href='/services'>All Services</a>
                 </div>
@@ -56,6 +56,18 @@
                   <a class="dropdown-item" href='/reports'>All Reports</a>
                 </div>
               </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle"
+                   data-toggle="dropdown" href="#"
+                   role="button" aria-haspopup="true" aria-expanded="false">
+                  Health Insurance
+                </a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href='/insurance'>Insurance Cover</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href='/reports'>&nbsp;</a>
+                </div>
+              </li>
               <li class="nav-item pull-lg-right">
                 <a class="nav-link" href="/logout">Logout</a>
               </li>
@@ -65,14 +77,14 @@
       </nav>
     </div>
 <% end %>
-<div class='container'>
+<div class='container-fluid' style='padding-top: 70px;'>
   <%= yield %>
 </div>
 <% if logged_in? %>
-    <!-- Footer -->
+    <!-- Footer fixed -->
     <footer class="footer">
-      <div class="container">
-        <span class="text-muted">Billing 2016.</span>
+      <div class="container-fluid bg-inverse navbar-fixed-bottom">
+        <span class='text-muted'>Billing 2016.</span>
       </div>
     </footer>
 <% end %>

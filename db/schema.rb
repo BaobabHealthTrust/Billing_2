@@ -10,7 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160905085607) do
+ActiveRecord::Schema.define(version: 20160905104417) do
+
+  create_table "health_insurance_plans", primary_key: "insurance_plan_id", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "insurance_id",                                   null: false
+    t.string   "name",                                           null: false
+    t.text     "description",      limit: 65535
+    t.float    "cover_percentage", limit: 24,    default: 0.0,   null: false
+    t.boolean  "voided",                         default: false, null: false
+    t.string   "void_reason"
+    t.integer  "creator",                                        null: false
+    t.integer  "changed_by"
+    t.datetime "date_created"
+    t.datetime "date_changed"
+  end
+
+  create_table "health_insurances", primary_key: "insurance_id", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name",                                       null: false
+    t.text     "description",  limit: 65535
+    t.boolean  "voided",                     default: false, null: false
+    t.string   "void_reason"
+    t.integer  "creator",                                    null: false
+    t.integer  "changed_by"
+    t.datetime "date_created"
+    t.datetime "date_changed"
+  end
 
   create_table "user_roles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "role"

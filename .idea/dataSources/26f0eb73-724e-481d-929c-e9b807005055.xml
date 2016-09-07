@@ -34,84 +34,171 @@
     <schema id="30" name="sys" />
     <schema id="31" name="test" />
     <schema id="32" name="username" />
-    <table id="33" parent="1" name="ar_internal_metadata" />
-    <table id="34" parent="1" name="schema_migrations" />
-    <table id="35" parent="1" name="user_roles" />
-    <table id="36" parent="1" name="users" />
-    <column id="37" parent="33" name="key">
+    <schema id="33" name="opd_database" />
+    <schema id="34" name="xBilling_development" />
+    <table id="35" parent="1" name="ar_internal_metadata" />
+    <table id="36" parent="1" name="schema_migrations" />
+    <table id="37" parent="1" name="user_roles" />
+    <table id="38" parent="1" name="users" />
+    <table id="39" parent="1" name="health_insurance_plans" />
+    <table id="40" parent="1" name="health_insurances" />
+    <column id="41" parent="35" name="key">
       <mandatory>1</mandatory>
       <data-type>varchar(255)|0</data-type>
     </column>
-    <column id="38" parent="33" name="value">
+    <column id="42" parent="35" name="value">
       <data-type>varchar(255)|0</data-type>
     </column>
-    <column id="39" parent="33" name="created_at">
+    <column id="43" parent="35" name="created_at">
       <mandatory>1</mandatory>
       <data-type>datetime|0</data-type>
     </column>
-    <column id="40" parent="33" name="updated_at">
+    <column id="44" parent="35" name="updated_at">
       <mandatory>1</mandatory>
       <data-type>datetime|0</data-type>
     </column>
-    <key id="41" parent="33" name="PRIMARY">
+    <key id="45" parent="35" name="PRIMARY">
       <columns>key</columns>
       <primary>1</primary>
     </key>
-    <column id="42" parent="34" name="version">
+    <column id="46" parent="36" name="version">
       <mandatory>1</mandatory>
       <data-type>varchar(255)|0</data-type>
     </column>
-    <key id="43" parent="34" name="PRIMARY">
+    <key id="47" parent="36" name="PRIMARY">
       <columns>version</columns>
       <primary>1</primary>
     </key>
-    <column id="44" parent="35" name="id">
+    <column id="48" parent="37" name="id">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
       <sequence-identity>1</sequence-identity>
     </column>
-    <column id="45" parent="35" name="role">
+    <column id="49" parent="37" name="role">
       <data-type>varchar(255)|0</data-type>
     </column>
-    <column id="46" parent="35" name="user_id">
+    <column id="50" parent="37" name="user_id">
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="47" parent="35" name="created_at">
+    <column id="51" parent="37" name="created_at">
       <mandatory>1</mandatory>
       <data-type>datetime|0</data-type>
     </column>
-    <column id="48" parent="35" name="updated_at">
+    <column id="52" parent="37" name="updated_at">
       <mandatory>1</mandatory>
       <data-type>datetime|0</data-type>
     </column>
-    <key id="49" parent="35" name="PRIMARY">
+    <key id="53" parent="37" name="PRIMARY">
       <columns>id</columns>
       <primary>1</primary>
     </key>
-    <column id="50" parent="36" name="id">
+    <column id="54" parent="38" name="id">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
       <sequence-identity>1</sequence-identity>
     </column>
-    <column id="51" parent="36" name="username">
+    <column id="55" parent="38" name="username">
       <data-type>varchar(255)|0</data-type>
     </column>
-    <column id="52" parent="36" name="user_role_id">
+    <column id="56" parent="38" name="user_role_id">
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="53" parent="36" name="pasword_digest">
+    <column id="57" parent="38" name="password_digest">
       <data-type>varchar(255)|0</data-type>
     </column>
-    <column id="54" parent="36" name="created_at">
+    <column id="58" parent="38" name="created_at">
       <mandatory>1</mandatory>
       <data-type>datetime|0</data-type>
     </column>
-    <column id="55" parent="36" name="updated_at">
+    <column id="59" parent="38" name="updated_at">
       <mandatory>1</mandatory>
       <data-type>datetime|0</data-type>
     </column>
-    <key id="56" parent="36" name="PRIMARY">
+    <key id="60" parent="38" name="PRIMARY">
       <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="61" parent="39" name="insurance_plan_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="62" parent="39" name="insurance_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="63" parent="39" name="name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="64" parent="39" name="description">
+      <data-type>text|0</data-type>
+    </column>
+    <column id="65" parent="39" name="cover_percentage">
+      <mandatory>1</mandatory>
+      <data-type>float|0</data-type>
+      <default-expression>'0'</default-expression>
+    </column>
+    <column id="66" parent="39" name="voided">
+      <mandatory>1</mandatory>
+      <data-type>tinyint(1)|0</data-type>
+      <default-expression>'0'</default-expression>
+    </column>
+    <column id="67" parent="39" name="void_reason">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="68" parent="39" name="creator">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="69" parent="39" name="changed_by">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="70" parent="39" name="date_created">
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="71" parent="39" name="date_changed">
+      <data-type>datetime|0</data-type>
+    </column>
+    <key id="72" parent="39" name="PRIMARY">
+      <columns>insurance_plan_id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="73" parent="40" name="insurance_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="74" parent="40" name="name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="75" parent="40" name="description">
+      <data-type>text|0</data-type>
+    </column>
+    <column id="76" parent="40" name="voided">
+      <mandatory>1</mandatory>
+      <data-type>tinyint(1)|0</data-type>
+      <default-expression>'0'</default-expression>
+    </column>
+    <column id="77" parent="40" name="void_reason">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="78" parent="40" name="creator">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="79" parent="40" name="changed_by">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="80" parent="40" name="date_created">
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="81" parent="40" name="date_changed">
+      <data-type>datetime|0</data-type>
+    </column>
+    <key id="82" parent="40" name="PRIMARY">
+      <columns>insurance_id</columns>
       <primary>1</primary>
     </key>
   </database-model>

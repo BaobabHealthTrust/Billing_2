@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+    get '/insurance', to: 'insurance#index'
+
+    get '/new_company', to: 'insurance#new_company'
+
+    post '/update_insurance', to: 'insurance#update_insurance'
+
+    get '/accounts', to: 'accounts#index'
+
     get '/reports', to: 'reports#index'
 
     get '/services', to: 'services#index'
